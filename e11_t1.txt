@@ -1,0 +1,22 @@
+from public.data import words
+
+def words_with_length(length):
+    '''this one just serves as an example'''
+    return [word for word in words if len(word) == length]
+
+def words_containing_string(s):
+    return [word for word in words if s in word]
+
+def words_starting_with_character(c):
+    return [word for word in words if word.startswith(c)]
+
+def alphabet():
+    '''you don't have to solve this one using a comprehension.'''
+    lis= [chr(i) for i in range(ord('a'),ord('z')+1)]
+    return "".join(lis)
+
+def dictionary():
+    return {letters : words_starting_with_character(letters) for letters in alphabet()}
+
+def censored_words(s):
+    return [len(word)*"x" if s in word else word for word in words]

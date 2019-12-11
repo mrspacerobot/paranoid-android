@@ -1,0 +1,9 @@
+import random
+class GameRunner(object):
+
+    def __init__(self):
+        self.rows = 17
+        self.columns = 2
+
+    def generate_hex_codes(self):
+        return ["0x"+ "".join([random.choice("0123456789ABCDEF") for i in range(4)])for j in range(self.columns * self.rows)]
